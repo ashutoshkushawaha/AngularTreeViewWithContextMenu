@@ -1,0 +1,39 @@
+<h1>Counter</h1>
+
+<p>This is a simple example of an Angular component.</p>
+
+<p>Current count: <strong>{{ currentCount }}</strong></p>
+
+<button (click)="incrementCounter()">Increment</button>
+
+<!--<ngx-qrcode qrc-element-type="url" [qrc-value]="ngxQrcode2"></ngx-qrcode>
+<ngx-qrcode qrc-element-type="url" [qrc-value]="techiediaries"></ngx-qrcode>
+<ngx-qrcode qrc-element-type="url" [qrc-value]="letsboot"></ngx-qrcode>-->
+
+<h1>Angular2 Context Menu Demo</h1>
+<div (click)="$event.preventDefault()" style="margin:20px; padding:20px">
+    <div style="position: relative">
+        <div style="margin:20px; padding:20px;transform: translate3d(0px, 0px, 0px)">
+            <div (click)="$event.preventDefault()" style="transform: translate3d(10px, -10px, 0px)">
+
+                <tree-root [nodes]="nodes"  (activate)="onEvent($event)" [(state)]="state" [options]="options" [contextMenu]="customClassMenu" [contextMenuSubject]="nodes"></tree-root>
+                <br>
+                <h3>Custom styling</h3>
+                <ul>
+                    <li *ngFor="let item of dataItem" [contextMenu]="customClassMenu" [contextMenuSubject]="item">{{item.name}}</li>
+                </ul>
+                <context-menu #customClassMenu [menuClass]="'mystyle'" style="pointer-events:all">
+                    <ng-template contextMenuItem (execute)="showMessage('Styled menu1',$event.item)">
+                        Add
+                    </ng-template>
+                    <ng-template contextMenuItem (execute)="showMessage('Styled menu2',$event.item)">
+                        Update
+                    </ng-template>
+                    <ng-template contextMenuItem (execute)="showMessage('Styled menu3',$event.item)">
+                        Delete
+                    </ng-template>
+                </context-menu>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+<tree-root [nodes]="nodes" [options]="options"></tree-root>
+
+
+
+<ngx-treeview [config]="config"
+              [items]="items"
+              (selectedChange)="onSelectedChange($event)"
+              (filterChange)="onFilterChange($event)">
+</ngx-treeview>
